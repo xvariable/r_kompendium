@@ -1,0 +1,5 @@
+jupyter-book
+r-essentials
+r-tidyverse
+r-janitor
+r-rtweet
