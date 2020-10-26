@@ -25,8 +25,8 @@ notebook_interface            : "notebook"
 #######################################################################################
 # Launch button settings
 repository:
-  url                         : https://github.com/xvariable/r_kompendium/gh-pages
-  path_to_book                : "r_book"
+  url                         : https://github.com/xvariable/r_kompendium
+  branch                      : "gh-pages"
 
 binder:
   binderhub_url               : "https://mybinder.org"

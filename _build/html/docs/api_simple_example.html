@@ -128,11 +128,6 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="#auf-apis-zugreifen-uber-r">
-   Auf APIs zugreifen über R
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="api_wrapper.html">
    API-Wrapper in R
   </a>
@@ -204,7 +199,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/xvariable/r_kompendium/master?urlpath=tree/r_book/docs/api_simple_example.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xvariable/r_kompendium/gh-pages?urlpath=tree/docs/api_simple_example.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -226,64 +221,62 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Beispiel für den Zugriff über eine API
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ein-get-request-uber-die-api">
+   Ein GET()-Request über die API
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ein-get-request-uber-die-api">
-     Ein GET()-Request über die API
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#json-format">
-     JSON-Format
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#json-format">
+   JSON-Format
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#auf-apis-zugreifen-uber-r">
    Auf APIs zugreifen über R
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#vorbereitung">
      Vorbereitung
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mit-httr-auf-eine-api-zugreifen">
      Mit httr auf eine API zugreifen
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#die-response-in-einen-datensatz-umwandeln">
      Die Response in einen Datensatz umwandeln
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zusammenfassung">
-     Zusammenfassung
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubungsaufgabe">
-     Übungsaufgabe
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aufgaben">
-     Aufgaben
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#oauth">
-     OAuth
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusammenfassung">
+   Zusammenfassung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubungsaufgabe">
+   Übungsaufgabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#authentifizierung">
+   Authentifizierung
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgaben">
+   Aufgaben
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oauth">
+   OAuth
+  </a>
  </li>
 </ul>
 
@@ -330,11 +323,10 @@ Die Beispiel-URL können Sie testweise auch in den Browser eingeben. Sie bekomme
 <p>Das Format besteht aus einer ineinander verschachtelten Struktur, die duch geschweifte Klammern gekennzeichnet ist. (<code class="docutils literal notranslate"><span class="pre">{</span></code>und <code class="docutils literal notranslate"><span class="pre">}</span></code>). Diese Klammern enthalten verschiedene, frei definierbare, Key-Value-Paare (z. B. <code class="docutils literal notranslate"><span class="pre">&quot;Vorname&quot;:</span> <span class="pre">&quot;Julia&quot;</span></code>).</p>
 <p>Wenn Sie die URL oben in den Browser eingegeben haben ist das ganze leider nicht so schön formatiert wie im Beispiel oben. Die Einrückungen hat der Browser einfach weggelassen. Für Computer ist das JSON-Format natürlich trotzdem gut lesbar und R hat ein paar Tools, mit denen man ein JSON in Datensätze umwandeln kann. Deshalb schauen wir uns als nächstes an, wie wir das JSON über die API direkt in R laden können.</p>
 </div>
-</div>
 <div class="section" id="auf-apis-zugreifen-uber-r">
-<h1>Auf APIs zugreifen über R<a class="headerlink" href="#auf-apis-zugreifen-uber-r" title="Permalink to this headline">¶</a></h1>
+<h2>Auf APIs zugreifen über R<a class="headerlink" href="#auf-apis-zugreifen-uber-r" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="vorbereitung">
-<h2>Vorbereitung<a class="headerlink" href="#vorbereitung" title="Permalink to this headline">¶</a></h2>
+<h3>Vorbereitung<a class="headerlink" href="#vorbereitung" title="Permalink to this headline">¶</a></h3>
 <p>Um eine Anfrage an eine REST-API zu stellen eignet sich in das Paket <code class="docutils literal notranslate"><span class="pre">httr</span></code>. Wie oben im Browser berits gesehen liefert die API eine JSON-Datei zurück. Die JSON-Datei in einen schön formatierten Datensatz umzuwandeln geht am einfachsten mit dem <code class="docutils literal notranslate"><span class="pre">jsonlite</span></code>-Paket. Beide Pakete gehören zum tidyverse. Sie sollten also installiert sein, sofern das tidyverse-Paket bereits installiert wurde. Sie müssen aber dennoch separat geladen werden, das Laden des tidyverse-Paketes alleine reicht nicht aus. Außerdem installiere ich hier noch das Paket <code class="docutils literal notranslate"><span class="pre">janitor</span></code>, mit dem wir den Datensatz später noch schöner, nämlich mit Variablennamen im <em>snake_case</em> formatieren können.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -390,7 +382,7 @@ Die Beispiel-URL können Sie testweise auch in den Browser eingeben. Sie bekomme
 </div>
 </div>
 <div class="section" id="mit-httr-auf-eine-api-zugreifen">
-<h2>Mit httr auf eine API zugreifen<a class="headerlink" href="#mit-httr-auf-eine-api-zugreifen" title="Permalink to this headline">¶</a></h2>
+<h3>Mit httr auf eine API zugreifen<a class="headerlink" href="#mit-httr-auf-eine-api-zugreifen" title="Permalink to this headline">¶</a></h3>
 <p>Um den Output klein zu halten lade ich im folgenden Beispiel das JSON-File für nur eine Serie herunter, also nur einen einzelnen Datensatz. Ich habe mich für die Sesamstraße, auf Englisch “sesame street” entschieden. Die URL für den API-Zugriff lautet analog zum obrigen Beispiel: <code class="docutils literal notranslate"><span class="pre">&quot;http://api.tvmaze.com/search/shows?q=sesame%20street&quot;</span></code></p>
 <p>Vielleicht fällt Ihnen das <code class="docutils literal notranslate"><span class="pre">%20</span></code> in der URL auf. Da URLs keine Leerzeichen enthalten dürfen, muss das Leerzeichen in “sesame street” encodiert werden. Die Zeichenfolge <code class="docutils literal notranslate"><span class="pre">%20</span></code> wird ersatzweise für das Leerzeichen eingesetzt. Auch viele andere Sonderzeichen dürfen nicht in URLs enthalten sein und müssten in so einer Anfrage encodiert werden. Weitere Infos zum URL-Encoding finden Sie auf <a class="reference external" href="https://de.wikipedia.org/wiki/URL-Encoding">Wikipedia</a>. Dort wird auch nochmaleinmal die Bedeutung der Steuerungszeichen <code class="docutils literal notranslate"><span class="pre">?</span></code>und <code class="docutils literal notranslate"><span class="pre">=</span></code>erläutert.</p>
 <div class="cell docutils container">
@@ -429,7 +421,7 @@ Die Beispiel-URL können Sie testweise auch in den Browser eingeben. Sie bekomme
 <p>Die Ausgabe sieht so aus wie wir das schon aus dem Browser kennen. Eine ziemliche Textwüste mit einigen Verschachtelungen und Key-Value-Paaren. Auch hier handelt es sich um JSON.</p>
 </div>
 <div class="section" id="die-response-in-einen-datensatz-umwandeln">
-<h2>Die Response in einen Datensatz umwandeln<a class="headerlink" href="#die-response-in-einen-datensatz-umwandeln" title="Permalink to this headline">¶</a></h2>
+<h3>Die Response in einen Datensatz umwandeln<a class="headerlink" href="#die-response-in-einen-datensatz-umwandeln" title="Permalink to this headline">¶</a></h3>
 <p>Zum Glück ist es mit dem Paket <code class="docutils literal notranslate"><span class="pre">jsonlite</span></code> sehr einfach, einen Datensatz daraus zu erzeugen. Der Befehl <code class="docutils literal notranslate"><span class="pre">fromJSON()</span></code> wandelt die Datei in eine Matrix um. Das zusätzliche Attribut <code class="docutils literal notranslate"><span class="pre">flatten</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> sorgt dabei dafür, die Verschachtelungen im JSON-File aufzulösen. In der zwiten Zeile der Pipe wird die Matrix direkt in einen Datensatz bzw. Tibble umgewandelt. Der Zusatz <code class="docutils literal notranslate"><span class="pre">.name_repair</span> <span class="pre">=</span> <span class="pre">janitor::make_clean_names</span></code> sorgt dabei dafür, die Variablennamen tidyverse-konform in snake_case zu ändern.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -454,6 +446,7 @@ Die Beispiel-URL können Sie testweise auch in den Browser eingeben. Sie bekomme
 </tbody>
 </table>
 </div></div>
+</div>
 </div>
 </div>
 <div class="section" id="zusammenfassung">
@@ -558,8 +551,10 @@ Die Beispiel-URL können Sie testweise auch in den Browser eingeben. Sie bekomme
 </table>
 </div></div>
 </div>
-<p>#Authentifizierung
-Die API, die wir uns gerade angeschaut haben, ist frei und kostenlos verfügbar. Jeder kann sie benutzen, man muss sich gegenüber dem Server nicht einmal ausweisen. Das ist nicht bei allen APIs so. Im Gegenteil, die meisten Provider interessanter APIs möchten, dass man sich registiert und bei jedem API-Zugriff authentifiziert. Auch bei TVmaze gibt es zusätzlich zur freien API eine “Premium”-API für registirierte Nutzer und sogar einen Zugang für Geschäftskunden.
+</div>
+<div class="section" id="authentifizierung">
+<h2>Authentifizierung<a class="headerlink" href="#authentifizierung" title="Permalink to this headline">¶</a></h2>
+<p>Die API, die wir uns gerade angeschaut haben, ist frei und kostenlos verfügbar. Jeder kann sie benutzen, man muss sich gegenüber dem Server nicht einmal ausweisen. Das ist nicht bei allen APIs so. Im Gegenteil, die meisten Provider interessanter APIs möchten, dass man sich registiert und bei jedem API-Zugriff authentifiziert. Auch bei TVmaze gibt es zusätzlich zur freien API eine “Premium”-API für registirierte Nutzer und sogar einen Zugang für Geschäftskunden.
 Über die Authentifizierung kann der API-Provider den Zugriff regeln und limitieren (z.B. den Abruf von nur X Datensätzen pro Monat erlauben) und auch den Datentransfer abrechnen, wenn dieser kostenpflichtig ist.</p>
 <p>Eine übliche Beschränkung ist bspw. auch das so genannte <strong>Rate Limiting</strong>. Dabei wird die Menge der möglichen Anfragen pro Zeiteinheit eingeschränkt. Twitter limitiert z.B. den Zugriff auf Timelines mit 75 Request pro 15 Minuten. Damit wird verhindert, dass der Server unter der Last zuvieler Anfragen zusammenbricht und eine missbräuchliche “übermäßige” Nutzung wird eingedämmt. Beim Zugriff auf APIs sollte man deshalb auf eine faire Nutzung achten und darauf, dass man das Rate Limit keinesfalls überschreitet. Im R-Code kann man dazu mit der Funktion <code class="docutils literal notranslate"><span class="pre">Sys.sleep()</span></code> die Ausführung von Code um ein selbst gewähltes Zeitintervall verzögern. Die Funktion ist in base R verfügbar.</p>
 </div>
