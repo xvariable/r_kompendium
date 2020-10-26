@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Was ist eine API? &#8212; R Kompendium</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Beispiel für den Zugriff über eine API" href="api_simple_example.html" />
+    <link rel="prev" title="Installationsanleitung MacOS" href="installation_mac.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/ijk_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">R Kompendium</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <p class="caption">
+ <span class="caption-text">
+  Einleitung
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about_r.html">
+   Was ist R?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rstudio.html">
+   RStudio: Entwicklungsumgebung für R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="installation_mac.html">
+   Installationsanleitung MacOS
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  API-Zugriff
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Was ist eine API?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="api_simple_example.html">
+   Beispiel für den Zugriff über eine API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="api_simple_example.html#auf-apis-zugreifen-uber-r">
+   Auf APIs zugreifen über R
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="api_wrapper.html">
+   API-Wrapper in R
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/api_introduction.Rmd"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.Rmd</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xvariable/r_kompendium/master?urlpath=tree/r_book/docs/api_introduction.Rmd"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#welche-apis-gibt-es">
+   Welche APIs gibt es?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aufgabe">
+   Aufgabe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logik-von-apis">
+   Logik von APIs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standrads-fur-apis">
+   Standrads für APIs
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="was-ist-eine-api">
+<h1>Was ist eine API?<a class="headerlink" href="#was-ist-eine-api" title="Permalink to this headline">¶</a></h1>
+<p>API steht für “Application Programming Interface” und bezeichnet eine Programmierschnittstelle. Diese Schnittstelle dient dazu, Daten zwischen einer Softwareanwendung und einer anderen auszutauschen. So eine Software kann natürlich auch ein R- Skript sein mit dem Sie auf eine andere Anwendung zugreifen wollen. Der Austausch geschieht über zuvor definierte Befehle, die Syntax der API.</p>
+<p>Im Kontext dieses Tutorials beschäftgen wir uns mit Web APIs, also mit Schnittstellen, die Onlinedienstleister zum Zweck des Datenaustausches und der Datenverarbeitung zur Verfügung stellen. Es soll aber kurz erwähnt werden, dass der Begriff API natürlich eigendlich etwas breiter ist. In diesem Tutorial beschäftigen wir uns außerdem vor allem mit einem ganz bestimmten Typ von API, der REST-API heißt.</p>
+<div class="section" id="welche-apis-gibt-es">
+<h2>Welche APIs gibt es?<a class="headerlink" href="#welche-apis-gibt-es" title="Permalink to this headline">¶</a></h2>
+<p>Es gibt im Internet viele Dienstleister, die Daten zur Verfügung stellen, die aus kommunikationswissenschaftlicher Sicht interessant sind. Eine Liste wäre schier endlos. Generell gilt: Bevor man mit dem Scraping einer Website beginnt, sollte man erstmal recherchieren ob es vielleicht eine API dafür gibt.</p>
+<p>Es gibt einige Online-Verzeichnisse, auf denen APIs gelistet sind:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/public-apis/public-apis/blob/145ea881b2b15034d7207f7f7b6a781994fbb574/README.md#music">public apis github</a></p></li>
+<li><p><a class="reference external" href="https://public-apis.io/">public APIs.io</a></p></li>
+<li><p><a class="reference external" href="https://rapidapi.com/">RapidAPI</a></p></li>
+</ul>
+<p>Solche Verzeichnisse können aber natürlich niemals vollständig sein.</p>
+</div>
+<div class="section" id="aufgabe">
+<h2>Aufgabe<a class="headerlink" href="#aufgabe" title="Permalink to this headline">¶</a></h2>
+<p>Recherchieren Sie bis zur nächsten Woche eine API, die Sie aus Kommunikationswissenschaftlicher Sicht interessant finden. Für welchen Forschungszweck könnten Sie sie einsetzen?</p>
+</div>
+<div class="section" id="logik-von-apis">
+<h2>Logik von APIs<a class="headerlink" href="#logik-von-apis" title="Permalink to this headline">¶</a></h2>
+<p>Die Grundlogik von APIs ist schnell erklärt: Der API-Provider richtet einen Service ein, der Zugriff auf seine Datenbank gewährt. Er definiert natürlich auch auf welche Daten genau zugegriffen werden kann und über welche Syntax der Zugriff zu erfolgen hat. Der Prozess des Zugriffs über die API ist in der nachfolgenden Abbildung dargestellt.</p>
+<img src="../_static/img/api_logic.png" alt="Logik einer REST-API" style="margin-bottom:25px">
+<p>Auf der Seite des Users muss man diese Syntax natürlich kennen. Wenn man über die API zugreifen möchte, sendet man ein “Request” über das Internet an die Schnittstelle des Providers. Auf Seiten des Providers wird der Befehl dann ausgeführt und eine entsprechende Antwort zurückgeschickt. Diese Antwort kann Daten ganz unterschiedlichen Datei-Formate enthalten. Sehr häufig kommen z.B. das JSON oder XML-Format vor. Die Response beinhaltet aber auch Informationen über die Transaktion selbst z.B. Fehlermeldungen.</p>
+<p>Unter Umständen ist es notwendig, auf Seiten der User-Software mit einem API-Wrapper zu arbeiten, weil ein Programm oder in unserem Fall die Programmiersprache R nicht direkt in der API-Sprache kommunizieren kann. Da die API im Detail vom API-Provider festgelegt wird, wäre es auch etwas viel verlangt jede API zu kennen. Bei Wrappern handelt es sich um Funktionen, die die Details des API-Zugriffs regeln.</p>
+<p>Da APIs nicht nur von Computern, sondern auch von Anwendern verstanden werden müssen, stellen die API-Provider in der Regel mit der API eine Dokumentation zur Verfügung in der die Funktionen und PArameter erklärt werden und die Beispiele zeigt. Unter folgendem Link findet man z.B. die Dokumentation der Twitter-API: https://developer.twitter.com/en/docs/twitter-api</p>
+</div>
+<div class="section" id="standrads-fur-apis">
+<h2>Standrads für APIs<a class="headerlink" href="#standrads-fur-apis" title="Permalink to this headline">¶</a></h2>
+<p>Tatsächlich ist es so, dass im Prinzip jeder Provider seine eigene API-Schnittstelle entwickeln und zur Verfügung stellen könnte. Da unterschiedliche Spezifikationen aber schnell zu Chaos und Unübersichtlichkeit führen würden, haben sich Standards herausgebildet, die in der Regel verwendet werden. Für uns am relevantesten ist der Standard <strong>REST</strong> (Representational State Transfer). Die Grundidee dieses Standards ist sehr leicht nachvollziehbar, denn sie orientiert sich an HTTP. Genau wie beim Aufruf einer Website über HTTP stellt der Client (euer Browser oder R-Skript) eine Anfrage und der Server liefert eine Representation von Daten zurück (z.B. eine Webseite oder die gewünschten Daten).</p>
+<p>HTTP (und REST) kennen vier Typen von Anfragen:</p>
+<ul class="simple">
+<li><p>GET - fordert Daten vom Server an</p></li>
+<li><p>POST - sendet Daten an den Server</p></li>
+<li><p>PUT/PATCH - ändert bestehende Daten auf dem Server</p></li>
+<li><p>DELETE - löscht Daten vom Server</p></li>
+</ul>
+<p>Vielleicht fragen Sie sich, warum Sie Daten überschreiben oder etwas über eine API löschen sollten. API-Schnittstellen lassen das natürlich auch nur dann zu, wenn der Client über entsprechende Zugriffsrechte verfügt. Außerdem sind viele APIs ja gar nicht zu dem Zweck geschrieben, dass User:innen sich Daten herunterladen können, sondern damit sich verschiedene Anwendungen updaten können. Ein weiteres Beispiel ist das Updaten des eigenen Social-Media-Accounts.</p>
+<p>Da es in diesem Tutorial um die Datengewinnung geht, wird im Folgenden nur auf den GET()-Befehl eingegangen.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="installation_mac.html" title="previous page">Installationsanleitung MacOS</a>
+    <a class='right-next' id="next-link" href="api_simple_example.html" title="next page">Beispiel für den Zugriff über eine API</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Julia Niemann-Lenz<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
