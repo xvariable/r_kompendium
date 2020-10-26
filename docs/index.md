@@ -6,4 +6,4 @@ Das Buch ist Work in Progress. Ich habe im Wintersemester 2020 mit dem Aufbau de
 
 Über Hinweise auf Fehler und Anregungen, wie man diese Lernressource noch besser gestalten kann, freue ich mich!
 
-Zuletzt aktualisiert am: 2020-10-20 von Julia Niemann-Lenz
+Zuletzt aktualisiert am: 2020-10-23 von Julia Niemann-Lenz
