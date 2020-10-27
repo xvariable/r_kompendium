@@ -1,6 +1,1 @@
-jupyter-book
-r-essentials
-R-irkernel
-r-tidyverse
-r-janitor
-r-rtweet
+# for python packages
