@@ -30,7 +30,7 @@ notebook_interface          : "notebook"
 #######################################################################################
 repository:
   url                       : https://github.com/xvariable/r_kompendium
-  book_path                 : "jupyter_execute/docs"
+  #book_path                 : 
   branch                    : main
   
 # for Google Colab & binder
