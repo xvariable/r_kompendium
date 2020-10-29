@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Benutzeroberfläche &#8212; R Kompendium</title>
+    <title>Custom notebook formats and Jupytext &#8212; R Kompendium</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -56,8 +56,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="R Konsole" href="console.html" />
-    <link rel="prev" title="Installationsanleitung Windows" href="installation_windows.html" />
+    <link rel="next" title="APIs" href="../api/api_introduction.html" />
+    <link rel="prev" title="Einführung in die Programmiersprache R" href="../programming.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -95,43 +95,21 @@
   Get started
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../getting_started.html">
    Einleitung
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="installation.html">
+  <a class="reference internal" href="../start/installation.html">
    Installation
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../start/interfaces.html">
    Benutzeroberfläche
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="console.html">
-     R Konsole
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="rstudio_interface.html">
-     RStudio Benutzeroberfläche
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="rstudio_features.html">
-     Features von RStudio
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="rstudio_options.html">
-     RStudio anpassen
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -139,14 +117,14 @@
   Erste Schritte
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../programming.html">
    Einführung in die Programmiersprache R
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../first_steps/calculator.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Custom notebook formats and Jupytext
   </a>
  </li>
@@ -200,9 +178,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/docs/start/interfaces.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/docs/first_steps/calculator.Rmd"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.Rmd</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -220,6 +198,23 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xvariable/r_kompendium/gh-pages?urlpath=tree/docs/first_steps/calculator.Rmd"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -232,10 +227,16 @@
         
               <div>
                 
-  <div class="section" id="benutzeroberflache">
-<h1>Benutzeroberfläche<a class="headerlink" href="#benutzeroberflache" title="Permalink to this headline">¶</a></h1>
-<p>In diesem Abschnitt finden Sie alles, was Sie zum Start über die Benutzeroberfläche von R und RStudio wissen müssen. Dabei gehe ich zu nächst auf die R-Konsole ein, ein Tool, dass bereits beim Download von R mitgeliefert wird und in dem Sie die Sprache bereits ausführen können. - Wenngleich dies wenig komfortabel ist. Die R-Konsole ist aber auch ein Teil von RStudio. Im Anschluss gehe ich deshalb auf die IDE und ein paar ausgewählte Features genauer ein.</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="custom-notebook-formats-and-jupytext">
+<span id="file-types-custom"></span><h1>Custom notebook formats and Jupytext<a class="headerlink" href="#custom-notebook-formats-and-jupytext" title="Permalink to this headline">¶</a></h1>
+<p>etwas Text</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># execute code if the date is later than a specified day</span>
+<span class="n">do_it</span> <span class="o">=</span> <span class="nf">Sys.Date</span><span class="p">()</span> <span class="o">&gt;</span> <span class="s">&#39;2018-02-14&#39;</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -248,16 +249,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "r"
         },
         kernelOptions: {
-            kernelName: "python3",
-            path: "./docs/start"
+            kernelName: "ir",
+            path: "./docs/first_steps"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ir'</script>
 
               </div>
               
@@ -267,8 +268,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="installation_windows.html" title="previous page">Installationsanleitung Windows</a>
-    <a class='right-next' id="next-link" href="console.html" title="next page">R Konsole</a>
+    <a class='left-prev' id="prev-link" href="../programming.html" title="previous page">Einführung in die Programmiersprache R</a>
+    <a class='right-next' id="next-link" href="../api/api_introduction.html" title="next page">APIs</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -1,0 +1,23 @@
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.1'
+      jupytext_version: 1.1.1
+  kernelspec:
+    display_name: R
+    language: R
+    name: ir
+---
+
+(file-types:custom)=
+# Custom notebook formats and Jupytext
+
+etwas Text
+
+```{r}
+# execute code if the date is later than a specified day
+do_it = Sys.Date() > '2018-02-14'
+```
