@@ -1,22 +1,8 @@
----
-jupyter:
-  jupytext:
-    text_representation:
-      extension: .Rmd
-      format_name: rmarkdown
-      format_version: '1.1'
-      jupytext_version: 1.1.1
-  kernelspec:
-    display_name: R
-    language: R
-    name: ir
----
+# APIs
 
-# Was ist eine API?
+API steht für *Application Programming Interface* und bezeichnet eine Programmierschnittstelle. Diese Schnittstelle dient dazu, Daten zwischen einer Softwareanwendung und einer anderen auszutauschen. So eine Software kann natürlich auch ein R- Skript sein mit dem Sie auf eine andere Anwendung zugreifen wollen. Der Austausch geschieht über zuvor definierte Befehle, die Syntax der API. Weitere Infos zum Thema findet ihr auch bei Munzert et al. (2015).{cite}`Munzert_2015`)
 
-API steht für "Application Programming Interface" und bezeichnet eine Programmierschnittstelle. Diese Schnittstelle dient dazu, Daten zwischen einer Softwareanwendung und einer anderen auszutauschen. So eine Software kann natürlich auch ein R- Skript sein mit dem Sie auf eine andere Anwendung zugreifen wollen. Der Austausch geschieht über zuvor definierte Befehle, die Syntax der API.
-
-Im Kontext dieses Tutorials beschäftgen wir uns mit Web APIs, also mit Schnittstellen, die Onlinedienstleister zum Zweck des Datenaustausches und der Datenverarbeitung zur Verfügung stellen. Es soll aber kurz erwähnt werden, dass der Begriff API natürlich eigendlich etwas breiter ist. In diesem Tutorial beschäftigen wir uns außerdem vor allem mit einem ganz bestimmten Typ von API, der REST-API heißt.
+Im Kontext dieses Tutorials beschäftigen wir uns mit Web APIs, also mit Schnittstellen, die Onlinedienstleister zum Zweck des Datenaustausches und der Datenverarbeitung zur Verfügung stellen. Es soll aber kurz erwähnt werden, dass der Begriff API natürlich eigentlich etwas breiter ist. In diesem Tutorial beschäftigen wir uns außerdem vor allem mit einem ganz bestimmten Typ von API, der REST-API heißt.
 
 
 ## Welche APIs gibt es?
@@ -38,13 +24,13 @@ Recherchieren Sie bis zur nächsten Woche eine API, die Sie aus Kommunikationswi
 
 Die Grundlogik von APIs ist schnell erklärt: Der API-Provider richtet einen Service ein, der Zugriff auf seine Datenbank gewährt. Er definiert natürlich auch auf welche Daten genau zugegriffen werden kann und über welche Syntax der Zugriff zu erfolgen hat. Der Prozess des Zugriffs über die API ist in der nachfolgenden Abbildung dargestellt.
 
-<img src="../_static/img/api_logic.png" alt="Logik einer REST-API" style="margin-bottom:25px">
+<img src="../../_static/img/api_logic.png" alt="Logik einer REST-API" style="margin-bottom:25px">
 
 Auf der Seite des Users muss man diese Syntax natürlich kennen. Wenn man über die API zugreifen möchte, sendet man ein "Request" über das Internet an die Schnittstelle des Providers. Auf Seiten des Providers wird der Befehl dann ausgeführt und eine entsprechende Antwort zurückgeschickt. Diese Antwort kann Daten ganz unterschiedlichen Datei-Formate enthalten. Sehr häufig kommen z.B. das JSON oder XML-Format vor. Die Response beinhaltet aber auch Informationen über die Transaktion selbst z.B. Fehlermeldungen.
 
 Unter Umständen ist es notwendig, auf Seiten der User-Software mit einem API-Wrapper zu arbeiten, weil ein Programm oder in unserem Fall die Programmiersprache R nicht direkt in der API-Sprache kommunizieren kann. Da die API im Detail vom API-Provider festgelegt wird, wäre es auch etwas viel verlangt jede API zu kennen. Bei Wrappern handelt es sich um Funktionen, die die Details des API-Zugriffs regeln.
 
-Da APIs nicht nur von Computern, sondern auch von Anwendern verstanden werden müssen, stellen die API-Provider in der Regel mit der API eine Dokumentation zur Verfügung in der die Funktionen und PArameter erklärt werden und die Beispiele zeigt. Unter folgendem Link findet man z.B. die Dokumentation der Twitter-API: https://developer.twitter.com/en/docs/twitter-api
+Da APIs nicht nur von Computern, sondern auch von Anwendern verstanden werden müssen, stellen die API-Provider in der Regel mit der API eine Dokumentation zur Verfügung in der die Funktionen und Parameter erklärt werden und die Beispiele zeigt. Unter diesem [Link](https://developer.twitter.com/en/docs/twitter-api) findet man z.B. die Dokumentation der Twitter-API.
 
 
 ## Standrads für APIs
@@ -61,3 +47,8 @@ Vielleicht fragen Sie sich, warum Sie Daten überschreiben oder etwas über eine
 
 Da es in diesem Tutorial um die Datengewinnung geht, wird im Folgenden nur auf den GET()-Befehl eingegangen.
 
+## Literatur
+```{bibliography} ../../_bibliography/references.bib
+:filter: docname in docnames
+:style: plain
+```

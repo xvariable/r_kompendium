@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Installationsanleitung MacOS &#8212; R Kompendium</title>
+    <title>Einführung in die Programmiersprache R &#8212; R Kompendium</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -53,10 +53,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Was ist eine API?" href="api_introduction.html" />
-    <link rel="prev" title="RStudio: Entwicklungsumgebung für R" href="rstudio.html" />
+    <link rel="next" title="APIs" href="api/api_introduction.html" />
+    <link rel="prev" title="RStudio anpassen" href="start/rstudio_options.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -91,45 +92,47 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <p class="caption">
  <span class="caption-text">
-  Einleitung
+  Get started
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="about_r.html">
-   Was ist R?
+  <a class="reference internal" href="getting_started.html">
+   Einleitung
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="rstudio.html">
-   RStudio: Entwicklungsumgebung für R
+  <a class="reference internal" href="start/installation.html">
+   Installation
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Installationsanleitung MacOS
+ <li class="toctree-l1">
+  <a class="reference internal" href="start/interfaces.html">
+   Benutzeroberfläche
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  API-Zugriff
+  Erste Schritte
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Einführung in die Programmiersprache R
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Daten-Akquise
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="api_introduction.html">
-   Was ist eine API?
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="api_simple_example.html">
-   Beispiel für den Zugriff über eine API
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="api_wrapper.html">
-   API-Wrapper in R
+  <a class="reference internal" href="api/api_introduction.html">
+   APIs
   </a>
  </li>
 </ul>
@@ -137,10 +140,6 @@
 </nav>
 
  <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
 
 </div>
 
@@ -174,7 +173,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/installation_mac.Rmd"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/programming.Rmd"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.Rmd</button></a>
         <!-- Download PDF via print -->
@@ -199,7 +198,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/xvariable/r_kompendium/gh-pages?urlpath=tree/_sources/docs/installation_mac.Rmd"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/xvariable/r_kompendium/gh-pages?urlpath=tree/docs/programming.Rmd"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -216,25 +215,6 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#erster-schritt-r">
-   Erster Schritt: R
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#zweiter-schritt-rstudio">
-   Zweiter Schritt: RStudio
-  </a>
- </li>
-</ul>
-
-        </nav>
-        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -242,32 +222,10 @@
         
               <div>
                 
-  <div class="section" id="installationsanleitung-macos">
-<h1>Installationsanleitung MacOS<a class="headerlink" href="#installationsanleitung-macos" title="Permalink to this headline">¶</a></h1>
-<p>Wie auf den vorhergehenden Seiten beschrieben, handelt es sich bei R und RStudio um zwei unterschiedliche Dinge:</p>
-<ol class="simple">
-<li><p>R, die Programmiersprache</p></li>
-<li><p>RStudio, die Entwicklungsumgebung</p></li>
-</ol>
-<p>Zur Installation müssen Sie deshalb auch <strong>beides nacheinander</strong> installieren.</p>
-<div class="section" id="erster-schritt-r">
-<h2>Erster Schritt: R<a class="headerlink" href="#erster-schritt-r" title="Permalink to this headline">¶</a></h2>
-<p>Die aktuelle Version von R können Sie über das CRAN downloaden. Die Webadresse lautet:  <a class="reference external" href="https://cran.r-project.org">https://cran.r-project.org/</a>. Gleich auf der Startseite finden Sie die Links zu den jeweils aktuellsten R-Versionen:</p>
-<img src="../_static/img/screenshot_cran_homepage.png" alt="Screenshot CRAN Homepage" width="600px" style="border:1px solid grey; margin-right:550px;margin-bottom:25px">
-<p>Klicken Sie auf der <a class="reference external" href="https://cran.r-project.org">Homepage des CRAN</a> auf “Download R for (Mac) OSX” und scrollen Sie bis zu den “Latest Releases”. Unter dieser Überschrift wird Ihnen die aktuellste “stable” Version von R angezeigt.</p>
-<p>Während diese Dokumentation geschrieben wurde war dies die Version 4.0.2, wie der nachfolgende Screenshot zeigt:</p>
-<img src="../_static/img/screenshot_cran_download_mac.png" alt="Screenshot CRAN Homepage" width="600px" style="border:1px solid grey; margin-right:550px;margin-bottom:25px"><p>Rechtsklicken Sie auf die Version und laden Sie sie herunter.</p>
-<p>Doppelklicken Sie auf die heruntergeladene Datei und folgen Sie der Installationsanleitung.</p>
-<img src="../_static/img/screenshot_install_mac.png" alt="Screenshot CRAN Homepage" width="300px" style="border:1px solid grey; margin-right:550px"></div>
-<div class="section" id="zweiter-schritt-rstudio">
-<h2>Zweiter Schritt: RStudio<a class="headerlink" href="#zweiter-schritt-rstudio" title="Permalink to this headline">¶</a></h2>
-<p>RStudio, die Entwicklungsumgebung für R können Sie unter <a class="reference external" href="https://rstudio.com/products/rstudio/download/">https://rstudio.com/products/rstudio/download/</a> herunterladen.</p>
-<p>Wählen Sie die Version “RStudio Desktop - Free” und laden Sie die Datei herunter.</p>
-<img src="../_static/img/screenshot_rstudio_free.png" alt="Screenshot Download RStudio" width="600px" style="border:1px solid grey; margin-right:550px;margin-bottom:25px">
-<p>Nachdem der Download abgeschlossen ist, doppelklicken Sie die Datei und ziehen Sie sie in Ihre Applications.</p>
-<img src="../_static/img/screenshot_install_rstudio_mac.png" alt="Screenshot Installation RStudio" width="300px" style="border:1px solid grey; margin-right:750px;margin-bottom:25px">
-<p>Nach der Installation können Sie das Programm RStudio öffnen. Es greift automatisch auf die zuvor installierte Version von R zu.</p>
-</div>
+  <div class="section" id="einfuhrung-in-die-programmiersprache-r">
+<h1>Einführung in die Programmiersprache R<a class="headerlink" href="#einfuhrung-in-die-programmiersprache-r" title="Permalink to this headline">¶</a></h1>
+<p>Es heisst nicht umsonst Programmier<em>sprache</em>: Eine Programmiersprache zu lernen hat gewisse Ähnlichkeit damit, eine Fremdsprache zu erlernen. Man muss die Grammatik kennen und Vokabeln pauken um sich verständigen zu können. Und verständigen wollen Sie sich ja auch beim Schreiben von Code, nur eben nicht mit anderen Menschen, sondern mit einem Computer.</p>
+<p>Leider sind Computer bisweilen ganz besonders pingelige Gesprächspartner. Sie beharren z.B. sehr genau auf korrekte Ausdrucksweisen und haben auch bei der Grammatik nur einen gewissen Spielraum. Zum Glück unterstützt RSTudio das Lernen von R mit einigen Features, die uns die Verständigung leichter machen!</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -298,8 +256,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="rstudio.html" title="previous page">RStudio: Entwicklungsumgebung für R</a>
-    <a class='right-next' id="next-link" href="api_introduction.html" title="next page">Was ist eine API?</a>
+    <a class='left-prev' id="prev-link" href="start/rstudio_options.html" title="previous page">RStudio anpassen</a>
+    <a class='right-next' id="next-link" href="api/api_introduction.html" title="next page">APIs</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
