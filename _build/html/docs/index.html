@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Herzlich Willkommen! &#8212; R Kompendium</title>
+    <title>Herzlich willkommen! &#8212; R Kompendium</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -53,9 +53,10 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Was ist R?" href="about_r.html" />
+    <link rel="next" title="Einleitung" href="getting_started.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -90,45 +91,47 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <p class="caption">
  <span class="caption-text">
-  Einleitung
+  Get started
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="about_r.html">
-   Was ist R?
+  <a class="reference internal" href="getting_started.html">
+   Einleitung
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="rstudio.html">
-   RStudio: Entwicklungsumgebung für R
+  <a class="reference internal" href="start/installation.html">
+   Installation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="installation_mac.html">
-   Installationsanleitung MacOS
+  <a class="reference internal" href="start/interfaces.html">
+   Benutzeroberfläche
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  API-Zugriff
+  Erste Schritte
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="api_introduction.html">
-   Was ist eine API?
+  <a class="reference internal" href="programming.html">
+   Einführung in die Programmiersprache R
   </a>
  </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Daten-Akquise
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="api_simple_example.html">
-   Zugriff über eine API
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="api_wrapper.html">
-   API-Wrapper in R
+  <a class="reference internal" href="api/api_introduction.html">
+   APIs
   </a>
  </li>
 </ul>
@@ -136,10 +139,6 @@
 </nav>
 
  <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
 
 </div>
 
@@ -198,6 +197,27 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#features-des-buches">
+   Features des Buches
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#disclaimer">
+   Disclaimer
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -206,14 +226,30 @@
               <div>
                 
   <div class="section" id="herzlich-willkommen">
-<h1>Herzlich Willkommen!<a class="headerlink" href="#herzlich-willkommen" title="Permalink to this headline">¶</a></h1>
-<p>Dieses Buch ist als begleitendes Lernmaterial für die Statistikausbildung in der Kommunikationswissenschaft gedacht. Es ist nicht einem bestimmten Kurs zugeordnet sondern soll sowohl als Lernressource als auch als Nachschlagewerk dienen. Es richtet sich sowohl an Einstieger:innen, die noch keine Statistik-Grundausbildung erhalten haben, als auch an Umsteiger:innen, die bisher mit einem anderen Statistikprogramm (vermutlich mit SPSS) gearbeitet haben.</p>
-<p>Das Buch ist Work in Progress. Ich habe im Wintersemester 2020 mit dem Aufbau des Kompeniums begonnen und ich werde es schrittweise um neue Inhalte erweitern.</p>
-<p>Über Hinweise auf Fehler und Anregungen, wie man diese Lernressource noch besser gestalten kann, freue ich mich!</p>
-<p>Zuletzt aktualisiert am: 2020-10-23 von Julia Niemann-Lenz</p>
+<h1>Herzlich willkommen!<a class="headerlink" href="#herzlich-willkommen" title="Permalink to this headline">¶</a></h1>
+<p><em>Julia Niemann-Lenz</em></p>
+<p>In diesem Lehrbuch möchte ich in die Programmiersprache R einführen. Es ist zum einen als begleitendes Lernmaterial für die Statistikausbildung am <em>Institut für Journalistik &amp; Kommunikationswissenschaft der Hochschule für Musik, Theater &amp; Medien Hannover</em> gedacht. Zum anderen soll es als Nachschlagewerk dienen. Aus diesen Gründen ist es nicht einem bestimmten Kurs zugeordnet, sondern enthält eine Sammlung von Erklärungen, Anleitungen und Skripten. – Viele davon können interaktiv ausprobiert werden. Das Buch richtet sich sowohl an Einstieger:innen, die gerade mit der Statistik-Grundausbildung beginnen, als auch an Umsteiger:innen, die bisher mit einem anderen Statistikprogramm (vermutlich mit SPSS) gearbeitet haben.</p>
+<p>R hat in den letzten Jahren innerhalb der Kommunikationswissenschaft stark an Bedeutung gewonnen, da es den Erfordernissen moderner Datenanalyse sehr viel besser entgegenkommt als herkömmliche Statistiksoftware. Denn die Anforderungen haben sich geändert: Durch die Digitalisierung und die damit einhergehende Datafizierung sind heute mehr Daten verfügbar den je und auch die Struktur der Daten hat sich gewandelt. Beispielsweise rückt die automatisierte Analyse von Textdaten zunehmend in den Fokus und Kommunikationsdaten aus Social Media weisen eine Netzwerkstruktur auf.</p>
+<p>Digitale Daten sind ein bedeutender Wirtschaftsfaktor, der oft höher eingeschätzt wird als manifeste Güter. Vielfach handelt es sich bei den nun verfügbaren Daten um Kommunikationsdaten. Deshalb sind Expert:innen, die sowohl fundiertes Domänenwissen im Bereich Kommunikation und Medien, als auch die Kompetenz Daten fachgerecht auszuwerten mitbringen in der Kommunikationspraxis sehr gefragt. Aber auch in den Sozialwissenschaften führt der “Computational Turn” zu deutlichen Veränderungen. Die Subdisziplin “Computational Communication Science” ist mittlerweile längst kein Trend mehr, sondern eine feste Größe der Forschungslandschaft. Verfahren aus dem Bereich der Informatik und der Statistik erweitern das traditionelle Methodenspektrum. Sie werden auch als “Compuational Methods” bezeichnet. Angesichts der “Reproduktionskrise” sind zudem die Anforderungen an die Transparenz und Reproduzierbarkeit von wissenschaftlichen Erkenntnissen gestiegen. Während die bisher eingesetzte proprietäre Statistiksoftware die neuen Anforderungen nicht oder nur unzureichend erfüllen kann, kommen Programmiersprachen diesen Bedarfen flexibel entgegen.</p>
+<div class="section" id="features-des-buches">
+<h2>Features des Buches<a class="headerlink" href="#features-des-buches" title="Permalink to this headline">¶</a></h2>
+<p>Dieses Buch ist ein <em>Jupyter Book</em>. Das bedeutet es ist in Markdown und in <em>Jupyter-Notebooks</em> geschrieben und der gesamte Code, den Sie im Buch finden wurde bei seiner Erstellung ausgeführt und wird auf github gehostet. Das Buch bietet gewisse Features, die hier kurz erläutert werden:</p>
+<p>Die Hauptnavigation finden Sie links. Bei umfangreichen Seiten wird rechts eine zusätzliche Navigation angezeigt, in der Sie die Inhalte der Seite finden.</p>
+<p>Sie können mit den Pfeiltasten  vorwärts <code class="docutils literal notranslate"><span class="pre">→</span></code> und rückwärts  <code class="docutils literal notranslate"><span class="pre">←</span></code> durch die einzelnen Seiten blättern.</p>
+<p><img src="../_static/img/rocket.png" alt="Raketen-Icon" style="float:left;margin:10px;"> Einige Seiten können zu Anschauungszwecken interaktive Elemente enthalten und die Jupyter-Notebooks können ausgeführt werden. Klicken Sie dazu auf das Raketen-Icon am oberen Rand der Seite. Sie haben dort die Wahl, ob Sie die Datei in <a class="reference external" href="https://mybinder.org/">Binder</a> oder <a class="reference external" href="https://colab.research.google.com/">Google Colab</a> öffnen möchten.</p>
+<p>Im Kopf der Seite finden Sie außerdem das Icon für den Fullscreen-Modus und einen Button über den Sie einzelne Seiten als PDF herunterladen können.</p>
+</div>
+<div class="section" id="disclaimer">
+<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this headline">¶</a></h2>
+<p>Das Buch Work in Progress! Ich habe im Wintersemester 2020 mit dem Aufbau des Kompeniums begonnen. Es ist ein ganz besonderes Semester, das zweite unter Corona-Bedingungen und diese Tatsache rückt noch einmal sehr in den Vordergrund, wie wichtig gute digitale Lernressourcen sind.</p>
+<p>Ich bemühe mich um eine sinnhafte Gliederung, sprechende Überschriften und einen linearen Aufbau. Gerade letzteres wird jedoch an einigen Stellen kaum möglich sein. Insbesondere, wenn Sie vielleicht zu den etwas fortgeschritteneren Anwendern gehören, scheuen Sie sich nicht, Inhalte zu überspringen und querzulesen!</p>
+<p>Die Erweiterung des Buches erfolgt schrittweise. Über Vorschläge für neue Inhalte, Hinweise auf Fehler und Anregungen, wie man diese Lernressource noch besser gestalten kann, freue ich mich!</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -245,7 +281,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="about_r.html" title="next page">Was ist R?</a>
+    <a class='right-next' id="next-link" href="getting_started.html" title="next page">Einleitung</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

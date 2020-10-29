@@ -11,35 +11,42 @@ description: >-
 #######################################################################################
 # Execution settings
 execute:
-  execute_notebooks           : cache
+  execute_notebooks         : cache
 
 #######################################################################################
 # HTML-specific settings
 html:
-  home_page_in_navbar         : false
+  home_page_in_navbar       : false
+  favicon                   : _static/img/favicon.png
+  use_edit_page_button      : false
+  use_repository_button     : false
+  extra_navbar              : ""
+  google_analytics_id       : "" 
 
 # #######################################################################################
 # Interact link settings
-notebook_interface            : "notebook"
+notebook_interface          : "notebook"
 
 #######################################################################################
-# Launch button settings
 repository:
-  url                         : https://github.com/xvariable/r_kompendium/
-  path_to_book                : "_sources"
-  branch                      : "gh-pages"
-
-binder:
-  binderhub_url               : "https://mybinder.org"
-  text                        : "Launch binder"
-
+  url                       : https://github.com/xvariable/r_kompendium
+  path: docs
+  branch: gh-pages
+  
+# for Google Colab
 launch_buttons:
+  notebook_interface        : classic # try jupyterlab
   colab_url: "https://colab.research.google.com"
 
+
+# for binder
+launch_buttons:
+  binderhub_url             : https://mybinder.org
+
 latex:
-  latex_engine                : "xelatex"
+  latex_engine              : "xelatex"
   latex_documents:
-    targetname: book.tex
+    targetname              : book.tex
     
 # for the .Rmd files
 sphinx:

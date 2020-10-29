@@ -1,19 +1,35 @@
-# - file: README
 - file: docs/index
   numbered: false
 
-- part: Einleitung
+- part: Get started
   chapters:
-  - file: docs/about_r
-  - file: docs/rstudio
+  - file: docs/getting_started
+    sections:
+    - file: docs/start/about_r
+    - file: docs/start/ten_reasons
+    - file: docs/start/rstudio
+    - file: docs/start/learning_r
+  - file: docs/start/installation
+    sections:
+    - file: docs/start/installation_mac
+    - file: docs/start/installation_windows
+  - file: docs/start/interfaces
+    sections:
+    - file: docs/start/console
+    - file: docs/start/rstudio_interface
+    - file: docs/start/rstudio_features
+    - file: docs/start/rstudio_options
+
+
+
 #  - file: docs/rstudio_cloud
-  - file: docs/installation_mac
-#  - file: docs/installation_windows
-  
-#- part: Erste Schritte
-#  chapters:
+
+- part: Erste Schritte
+  chapters:
+
+  - file: docs/programming
 #  - file: docs/r_files
-#  - file: docs/r_basics
+# - file: docs/r_basics
 #  - file: docs/data_import_export
 #  - file: docs/md_example
 #  - file: docs/jupytext
@@ -28,8 +44,9 @@
 
 #- part: Korrelation
 
-- part: API-Zugriff
+- part: Daten-Akquise
   chapters:
-   - file: docs/api_introduction
-   - file: docs/api_simple_example
-   - file: docs/api_wrapper
+  - file: docs/api/api_introduction
+    sections:
+    - file: docs/api/api_simple_example
+    - file: docs/api/api_wrapper
