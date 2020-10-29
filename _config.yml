@@ -36,7 +36,7 @@ repository:
 # for Google Colab & binder
 launch_buttons:
   notebook_interface        : classic # try jupyterlab
-  binderhub_url             : https://mybinder.org
+  binderhub_url             : https://notebooks.gesis.org/binder
   colab_url                 : "https://colab.research.google.com"
 
 latex:
