@@ -30,18 +30,13 @@ notebook_interface          : "notebook"
 #######################################################################################
 repository:
   url                       : https://github.com/xvariable/r_kompendium
-  path: docs
-  branch: gh-pages
+  branch: main
   
-# for Google Colab
+# for Google Colab & binder
 launch_buttons:
   notebook_interface        : classic # try jupyterlab
-  colab_url: "https://colab.research.google.com"
-
-
-# for binder
-launch_buttons:
   binderhub_url             : https://mybinder.org
+  colab_url                 : "https://colab.research.google.com"
 
 latex:
   latex_engine              : "xelatex"

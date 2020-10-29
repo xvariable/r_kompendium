@@ -28,7 +28,7 @@
   chapters:
 
   - file: docs/programming
-#  - file: docs/r_files
+  - file: docs/first_steps/calculator
 # - file: docs/r_basics
 #  - file: docs/data_import_export
 #  - file: docs/md_example
