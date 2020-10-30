@@ -243,6 +243,11 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ein-get-request-uber-http">
+   Ein GET()-Request über HTTP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ein-get-request-uber-die-api">
    Ein GET()-Request über die API
   </a>
@@ -312,6 +317,20 @@
                 
   <div class="section" id="zugriff-uber-eine-api">
 <h1>Zugriff über eine API<a class="headerlink" href="#zugriff-uber-eine-api" title="Permalink to this headline">¶</a></h1>
+<p>Als Beispiel benutzen wir die Seite <a class="reference external" href="https://www.tvmaze.com/">TVmaze</a>. Auf TVmaze aknn man sich Informationen zu TV-Serien und ihr Ausstrahlungstermine ansehen.</p>
+<div class="section" id="ein-get-request-uber-http">
+<h2>Ein GET()-Request über HTTP<a class="headerlink" href="#ein-get-request-uber-http" title="Permalink to this headline">¶</a></h2>
+<p>Wenn man auf der Seite z.B. nach dem Begriff “Love” sucht, bekommt man alle Serien angezeigt die diesen Begriff im Titel tragen und darunter eine Liste mit den Personen, die diesen Namen tragen. Aber noch etwas zweites passiert: Die URL im Brwoser verändert sich. Die URL ist die Adresse, die der Browser benötigt um uns eine Repräsentation der gewünschten Inhalte zu liefern, also eine GET()-Anfrage. Sie lautet jetzt <a class="reference external" href="https://www.tvmaze.com/search?q=Love">https://www.tvmaze.com/search?q=Love</a>.</p>
+<p>Schauen wir uns im Detail an, wie die URL jetzt aufgebaut ist.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">https://</span></code> Den erste Teil bildet das Protokoll, mit dem wir die Anfrage gestartet haben. Wie beim Besuch von Webseiten üblich handelt es sich um HTTP (<strong>H</strong>yper<strong>t</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol), hier in seiner sicheren Variante, gekennzeichnet durch das <em>s</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">www</span></code>: Ist die Subdomain</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tvmaze</span></code>: Der Name der Domain (die Adresse).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">com</span></code>: Die Toplevel-Domain</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/search</span></code>: Das Verzeichnis/der Pfad, in dem die Inhalte auf dem Server zu finden sind.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?q=Love</span></code>: Die Suchanfrage, eingeleitet durch ein <code class="docutils literal notranslate"><span class="pre">?</span></code>, dann folgt eine Kennzeichnung für das Feld, in dem gesucht haben. Die Webentwickler der Seite haben es hier <code class="docutils literal notranslate"><span class="pre">q</span></code> benannt, das steht vermutlich für <em>querry</em>. Dan folgt ein <code class="docutils literal notranslate"><span class="pre">=</span></code> und der eingegebene Suchbegriff.</p></li>
+</ul>
+</div>
 <div class="section" id="ein-get-request-uber-die-api">
 <h2>Ein GET()-Request über die API<a class="headerlink" href="#ein-get-request-uber-die-api" title="Permalink to this headline">¶</a></h2>
 <p>Wenn man nach ganz unten auf die Website scrollt, findet man den Link zur Dokumentation der API (oder <a class="reference external" href="https://www.tvmaze.com/api">hier</a>). Dort wird beschreiben welche <code class="docutils literal notranslate"><span class="pre">GET()</span></code>-Anfragen man über die API machen kann und wie die Syntax dafür lautet.</p>
